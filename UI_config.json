@@ -1,0 +1,45 @@
+{
+    "output_file": "settings.json",
+    "countDownTime": {
+        "type": "numberbox",
+        "label": "Countdown Time (seconds)",
+        "value": 5,
+        "tooltip": "Countdown Time in seconds.",
+        "group": "General"
+    },
+    "launchText": {
+        "type": "textbox",
+        "label": "Launch order",
+        "value": "NOW!",
+        "tooltip": "Text send to the chat when the sync drop shall begin, and people should hit the launch button.",
+        "group": "General"
+    },
+    "useBoth": {
+        "type": "checkbox",
+        "label": "Always use both chat systems",
+        "value": "NOW!",
+        "tooltip": "Always use both chat systems for output (Twitch and Discord).",
+        "group": "General"
+    },
+    "useNA": {
+        "type": "checkbox",
+        "value": true,
+        "label": "Use NA Region",
+        "tooltip": "Whether north-american region shall be used in the sync-drop or not",
+        "group": "Regions"
+    },
+    "useEU": {
+        "type": "checkbox",
+        "value": true,
+        "label": "Use EU Region",
+        "tooltip": "Whether european region shall be used in the sync-drop or not",
+        "group": "Regions"
+    },
+    "useOC": {
+        "type": "checkbox",
+        "value": true,
+        "label": "Use OC Region",
+        "tooltip": "Whether oceanic region shall be used in the sync-drop or not",
+        "group": "Regions"
+    }
+}
