@@ -63,15 +63,15 @@ You can also use any combination of these values by concatenating them with a "|
 ```
 !syncdrop 5 EU
 ```
-Launches the countdown with 5 seconds for reqion EU.
+Launches the countdown with 5 seconds for region EU.
 ```
 !syncdrop 5 EU|NA
 ```
-Launches the countdown with 5 seconds for reqion EU and NA.
+Launches the countdown with 5 seconds for region EU and NA.
 ```
 !syncdrop 5 EU|NA|OC
 ```
-Launches the countdown with 5 seconds for reqion EU, NA and OC.
+Launches the countdown with 5 seconds for region EU, NA and OC.
 
 The script will tell the users about which regions you have 
 selected, so they can adjust to your selection.
