@@ -95,14 +95,21 @@ def ReloadSettings(jsonData):
 
     Parent.Log(ScriptName, "Reloading settings")
 
-    data = json.loads(jsonData)
+    parsedData = json.loads(jsonData)
 
-    launchText = data["launchText"]
-    useBoth = data["useBoth"]
-    countDownTime = data["countDownTime"]
-    useNA = data["useNA"]
-    useEU = data["useEU"]
-    useOC = data["useOC"]
+    if("launchText" in parsedData):
+        launchText = parsedData["launchText"]
+    if("useBoth" in parsedData):
+        useBoth = parsedData["useBoth"]
+    if("countDownTime" in parsedData):
+        countDownTime = parsedData["countDownTime"]
+    if("useNA" in parsedData):
+      useNA = parsedData["useNA"]
+    if("useEU" in parsedData):
+        useEU = parsedData["useEU"]
+    if("useOC" in parsedData):
+        useOC = parsedData["useOC"]
+
     coolDownTime = countDownTime * 10
     return
 
@@ -185,5 +192,5 @@ def loadSettingsFile(base, filename):
             ReloadSettings(jsonData.read())
             return
     except Exception as e:
-        Parent.Log('Error loading {0}: {1}'.format(filename, str(e)))
+        Parent.Log(ScriptName, 'Error loading {0}: {1}'.format(filename, str(e)))
         return
