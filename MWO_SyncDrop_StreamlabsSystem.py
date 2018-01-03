@@ -26,7 +26,7 @@ HELP = "help?"
 commandPermission = "caster"
 commandInfo = "Initiates a sync-drop countdown for MWO"
 
-launchText = "NOW!"
+launchText = "CLICK!"
 countDownTime = 5
 useNA = True
 useEU = True
