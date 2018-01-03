@@ -4,7 +4,7 @@ This script is a plugin for the Streamlabs Chatbot for Twitch.
 It's purpose is to provide a simple way to synchronize a drop between 
 several Players of MechWarrior Online, while not grouped.
 
-## How does it work?
+### How does it work?
 Its function is simple: via a single command, a countdown is initiated, 
 at which end the players receive an order to initiate the drop.
 The countdown can be configured either via parameters to the command or by UI.
@@ -14,7 +14,25 @@ Via the "Use both chats" option in the UI, the script can be forced to always se
 the countdown and launch order to both chat systems, no matter from where it was 
 actually started.
 
-## Commandline Syntax
+## Installation
+### Prerequisites
+* First, you need the Streamlabs Chatbot, which you can download from the 
+[Streamlabs Website](https://www.streamlabs.com/chatbot). 
+Please follow the instruction provided there.
+* Second, you need Python 2.7.x (highest version preferable), for which there 
+also is a link on the Streamlabs Website. (2.7.x is a restriction coming from the
+Chatbot. My scripts will usually also work with Python 3.x)
+
+### Install the script
+Within the chatbot, you go to the "scripts" section and click on the cog in the upper right corner.
+There, you need to specify Python's Lib folder, usually "C:\Python27\Libs" unless you installed 
+Python somewhere else.
+
+Then you can simply click on "Import Script" and select the downloaded zip-file.
+This will install the script, and you're done.
+
+## Usage
+### Commandline Syntax
 While every possible option is available via the script's UI, the most important 
 options can also be entered via command line. Please note that the commandline will
 always take precedence over the settings defined via UI. The settings in the UI
