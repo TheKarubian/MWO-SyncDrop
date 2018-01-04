@@ -192,5 +192,5 @@ def loadSettingsFile(base, filename):
             ReloadSettings(jsonData.read())
             return
     except Exception as e:
-        Parent.Log(ScriptName, 'Error loading {0}: {1}'.format(filename, str(e)))
+        Parent.Log(ScriptName, "Error loading %s: %s" % (filename, str(e)))
         return
