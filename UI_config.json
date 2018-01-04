@@ -10,14 +10,14 @@
     "launchText": {
         "type": "textbox",
         "label": "Launch order",
-        "value": "NOW!",
+        "value": "CLICK!",
         "tooltip": "Text send to the chat when the sync drop shall begin, and people should hit the launch button.",
         "group": "General"
     },
     "useBoth": {
         "type": "checkbox",
         "label": "Always use both chat systems",
-        "value": "NOW!",
+        "value": false,
         "tooltip": "Always use both chat systems for output (Twitch and Discord).",
         "group": "General"
     },
