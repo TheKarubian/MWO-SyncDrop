@@ -14,6 +14,13 @@
         "tooltip": "Text send to the chat when the sync drop shall begin, and people should hit the launch button.",
         "group": "General"
     },
+    "useSubMode": {
+        "type": "checkbox",
+        "label": "Use subscription mode on Twitch during countdown",
+        "value": true,
+        "tooltip": "Enables subscription mode on Twitch, effectively silencing every non-subscriber.",
+        "group": "General"
+    },
     "useBoth": {
         "type": "checkbox",
         "label": "Always use both chat systems",

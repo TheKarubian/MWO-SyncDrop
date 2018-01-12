@@ -16,7 +16,7 @@ ScriptName = "Sync-Drop Countdown Script"
 Website = "https://www.dimensionv.de"
 Description = "Initiates a countdown on chat for sync-dropping, using the !syncdrop command"
 Creator = "Karubian"
-Version = "1.1.0"
+Version = "1.2.0"
 
 #---------------------------------------
 # Set Variables
@@ -31,6 +31,8 @@ countDownTime = 5
 useNA = True
 useEU = True
 useOC = True
+
+useSubMode = True
 
 effectiveLaunchText = launchText
 effectiveTime = countDownTime
@@ -86,6 +88,7 @@ def Tick():
 #---------------------------------------
 def ReloadSettings(jsonData):
     global launchText
+    global useSubMode
     global useBoth
     global countDownTime
     global useNA
@@ -98,19 +101,23 @@ def ReloadSettings(jsonData):
     parsedData = json.loads(jsonData)
 
     if("launchText" in parsedData):
-        launchText = parsedData["launchText"]
+      launchText = parsedData["launchText"]
+    if("useSubMode" in parsedData):
+      useSubMode = parsedData["useSubMode"]
     if("useBoth" in parsedData):
-        useBoth = parsedData["useBoth"]
+      useBoth = parsedData["useBoth"]
     if("countDownTime" in parsedData):
-        countDownTime = parsedData["countDownTime"]
+      countDownTime = int(parsedData["countDownTime"])
     if("useNA" in parsedData):
       useNA = parsedData["useNA"]
     if("useEU" in parsedData):
-        useEU = parsedData["useEU"]
+      useEU = parsedData["useEU"]
     if("useOC" in parsedData):
-        useOC = parsedData["useOC"]
+      useOC = parsedData["useOC"]
 
     coolDownTime = countDownTime * 10
+
+    Parent.Log(ScriptName, "Reloading finished")
     return
 
 def parseParameters(data):
@@ -151,6 +158,9 @@ def checkPermissionToRun(data):
     return result
  
 def runCountDown(count, includeEU, includeNA, includeOC):
+    if(useSubMode and isFromTwitch):
+        Parent.SendTwitchMessage("/subscribers")
+		
     sendMessage("Initiating sync-drop with the following regions included:")
 
     if(includeNA):
@@ -167,6 +177,10 @@ def runCountDown(count, includeEU, includeNA, includeOC):
         time.sleep(1.0)
 
     sendMessage(launchText)
+    
+    if(useSubMode and isFromTwitch):
+       Parent.SendTwitchMessage("/subscribersoff")
+    
     return
 
 def showHelp():
