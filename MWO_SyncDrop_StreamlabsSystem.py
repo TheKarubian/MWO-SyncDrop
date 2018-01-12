@@ -101,21 +101,23 @@ def ReloadSettings(jsonData):
     parsedData = json.loads(jsonData)
 
     if("launchText" in parsedData):
-        launchText = parsedData["launchText"]
+      launchText = parsedData["launchText"]
     if("useSubMode" in parsedData):
-        useSubMode = parsedData["launchText"]
+      useSubMode = parsedData["useSubMode"]
     if("useBoth" in parsedData):
-        useBoth = parsedData["useBoth"]
+      useBoth = parsedData["useBoth"]
     if("countDownTime" in parsedData):
-        countDownTime = parsedData["useSubMode"]
+      countDownTime = int(parsedData["countDownTime"])
     if("useNA" in parsedData):
       useNA = parsedData["useNA"]
     if("useEU" in parsedData):
-        useEU = parsedData["useEU"]
+      useEU = parsedData["useEU"]
     if("useOC" in parsedData):
-        useOC = parsedData["useOC"]
+      useOC = parsedData["useOC"]
 
     coolDownTime = countDownTime * 10
+
+    Parent.Log(ScriptName, "Reloading finished")
     return
 
 def parseParameters(data):
@@ -157,7 +159,7 @@ def checkPermissionToRun(data):
  
 def runCountDown(count, includeEU, includeNA, includeOC):
     if(useSubMode and isFromTwitch):
-        Parent.sendTwitchMessage("/subscribers")
+        Parent.SendTwitchMessage("/subscribers")
 		
     sendMessage("Initiating sync-drop with the following regions included:")
 
@@ -177,7 +179,7 @@ def runCountDown(count, includeEU, includeNA, includeOC):
     sendMessage(launchText)
     
     if(useSubMode and isFromTwitch):
-       Parent.sendTwitchMessage("/subscribersoff")
+       Parent.SendTwitchMessage("/subscribersoff")
     
     return
 
