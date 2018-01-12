@@ -16,7 +16,7 @@ ScriptName = "Sync-Drop Countdown Script"
 Website = "https://www.dimensionv.de"
 Description = "Initiates a countdown on chat for sync-dropping, using the !syncdrop command"
 Creator = "Karubian"
-Version = "1.1.0"
+Version = "1.2.0"
 
 #---------------------------------------
 # Set Variables
@@ -31,6 +31,8 @@ countDownTime = 5
 useNA = True
 useEU = True
 useOC = True
+
+useSubMode = True
 
 effectiveLaunchText = launchText
 effectiveTime = countDownTime
@@ -86,6 +88,7 @@ def Tick():
 #---------------------------------------
 def ReloadSettings(jsonData):
     global launchText
+    global useSubMode
     global useBoth
     global countDownTime
     global useNA
@@ -99,10 +102,12 @@ def ReloadSettings(jsonData):
 
     if("launchText" in parsedData):
         launchText = parsedData["launchText"]
+    if("useSubMode" in parsedData):
+        useSubMode = parsedData["launchText"]
     if("useBoth" in parsedData):
         useBoth = parsedData["useBoth"]
     if("countDownTime" in parsedData):
-        countDownTime = parsedData["countDownTime"]
+        countDownTime = parsedData["useSubMode"]
     if("useNA" in parsedData):
       useNA = parsedData["useNA"]
     if("useEU" in parsedData):
@@ -151,7 +156,10 @@ def checkPermissionToRun(data):
     return result
  
 def runCountDown(count, includeEU, includeNA, includeOC):
-    sendMessage("Initiating sync-drop with the following regions included:")
+	if(useSubMode and isFromTwitch):
+		Parent.sendTwitchMessage("/subscribers");
+		
+	sendMessage("Initiating sync-drop with the following regions included:")
 
     if(includeNA):
         sendMessage("North America")
@@ -167,6 +175,10 @@ def runCountDown(count, includeEU, includeNA, includeOC):
         time.sleep(1.0)
 
     sendMessage(launchText)
+    
+	if(useSubMode and isFromTwitch):
+		Parent.sendTwitchMessage("/subscribersoff");
+    
     return
 
 def showHelp():
