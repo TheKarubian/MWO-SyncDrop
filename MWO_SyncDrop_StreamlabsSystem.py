@@ -156,10 +156,10 @@ def checkPermissionToRun(data):
     return result
  
 def runCountDown(count, includeEU, includeNA, includeOC):
-	if(useSubMode and isFromTwitch):
-		Parent.sendTwitchMessage("/subscribers");
+    if(useSubMode and isFromTwitch):
+        Parent.sendTwitchMessage("/subscribers")
 		
-	sendMessage("Initiating sync-drop with the following regions included:")
+    sendMessage("Initiating sync-drop with the following regions included:")
 
     if(includeNA):
         sendMessage("North America")
@@ -176,8 +176,8 @@ def runCountDown(count, includeEU, includeNA, includeOC):
 
     sendMessage(launchText)
     
-	if(useSubMode and isFromTwitch):
-		Parent.sendTwitchMessage("/subscribersoff");
+    if(useSubMode and isFromTwitch):
+       Parent.sendTwitchMessage("/subscribersoff")
     
     return
 
