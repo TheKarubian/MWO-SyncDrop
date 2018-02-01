@@ -16,7 +16,7 @@ ScriptName = "Sync-Drop Countdown Script"
 Website = "https://www.dimensionv.de"
 Description = "Initiates a countdown on chat for sync-dropping, using the !syncdrop command"
 Creator = "Karubian"
-Version = "1.3.0"
+Version = "1.2.0"
 
 #---------------------------------------
 # Set Variables
@@ -163,16 +163,12 @@ def runCountDown(count, includeEU, includeNA, includeOC):
 		
     sendMessage("Initiating sync-drop with the following regions included:")
 
-    includedRegions = ""
-
     if(includeNA):
-        includedRegions = addRegion("North America", includedRegions)
+        sendMessage("North America")
     if(includeEU):
-        includedRegions = addRegion("Europe", includedRegions)
+        sendMessage("Europe")
     if(includeOC):
-        includedRegions = addRegion("Oceanic", includedRegions)
-
-    sendMessage(includedRegions)
+        sendMessage("Oceanic")
 
     sendMessage("Sync drop starts in:")
 
@@ -186,12 +182,6 @@ def runCountDown(count, includeEU, includeNA, includeOC):
        Parent.SendTwitchMessage("/subscribersoff")
     
     return
-
-def addRegion(region, regions):
-    if(regions != "" ):
-        regions += ", "
-    regions += region
-    return regions
 
 def showHelp():
     sendMessage("!syncdrop [<countDownTime>|<countDownTime> <regions>]")
