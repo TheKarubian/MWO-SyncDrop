@@ -1,8 +1,8 @@
 # MWO-SyncDrop
 
-**Latest Version:** 1.2.0
+**Latest Version:** 1.3.0
 
-**Download:** [MWO-SyncDrop-1.2.0.zip](https://github.com/TheKarubian/MWO-SyncDrop/releases/download/1.2.0/MWO-SyncDrop-1.2.0.zip)
+**Download:** [MWO-SyncDrop-1.3.0.zip](https://github.com/TheKarubian/MWO-SyncDrop/releases/download/1.3.0/MWO-SyncDrop-1.3.0.zip)
 
 ## Synopsis
 This script is a plugin for the Streamlabs Chatbot for Twitch.
